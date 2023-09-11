@@ -2,7 +2,12 @@
 #include <ctime>
 using namespace std;
 
-//function to find the size of an array using a template
+/// <summary>
+/// function to find the size of an array.
+///	Found on https://www.geeksforgeeks.org/how-to-print-size-of-an-array-in-a-function-in-c/
+/// </summary>
+/// <typeparam name="N"></typeparam>
+/// <param name="array"></param>
 template <size_t N>
 int GetArraySize(int (&array)[N])
 {
@@ -13,9 +18,13 @@ int GetArraySize(int (&array)[N])
 	return size;
 }
 
-//found on https://www.geeksforgeeks.org/how-to-print-size-of-an-array-in-a-function-in-c/
-
-//function to fill integer array with random numbers
+/// <summary>
+/// function to fill integer array with random numbers
+/// </summary>
+/// <typeparam name="N"></typeparam>
+/// <param name="array"></param>
+/// <param name="min"></param>
+/// <param name="max"></param>
 template <size_t N>
 void FillArray(int (&array)[N], const int min = 0, const int max = 256)
 {
@@ -30,7 +39,11 @@ void FillArray(int (&array)[N], const int min = 0, const int max = 256)
 	}
 }
 
-//function to print integer array values
+/// <summary>
+/// function to print integer array values
+/// </summary>
+/// <typeparam name="N"></typeparam>
+/// <param name="array"></param>
 template <size_t N>
 void PrintArray(int (&array)[N])
 {
@@ -41,7 +54,11 @@ void PrintArray(int (&array)[N])
 	}
 }
 
-//non recursive bubble sort algorithm
+/// <summary>
+/// non recursive bubble sort algorithm
+/// </summary>
+/// <typeparam name="N"></typeparam>
+/// <param name="array"></param>
 template <size_t N>
 void BubbleSort(int (&array)[N])
 {
@@ -68,7 +85,14 @@ void BubbleSort(int (&array)[N])
 	}
 }
 
-//partition helper function for quick sort
+/// <summary>
+/// partition helper function for quick sort
+/// </summary>
+/// <param name="array"></param>
+/// <param name="left"></param>
+/// <param name="right"></param>
+/// <param name="pivot"></param>
+/// <returns></returns>
 int Partition(int* array, int left, int right, const int pivot)
 {
 	//while left is less than or equal to right
@@ -102,7 +126,12 @@ int Partition(int* array, int left, int right, const int pivot)
 	return left;
 }
 
-//recursive quick sort algorithm
+/// <summary>
+/// recursive quick sort algorithm
+/// </summary>
+/// <param name="array"></param>
+/// <param name="left"></param>
+/// <param name="right"></param>
 void QuickSort(int* array, const int left, const int right)
 {
 	//if array is empty or has 1 element, return
@@ -122,7 +151,12 @@ void QuickSort(int* array, const int left, const int right)
 	QuickSort(array, index, right);
 }
 
-//recursive merge sort algorithm
+/// <summary>
+/// recursive merge sort algorithm
+/// </summary>
+/// <param name="array"></param>
+/// <param name="left"></param>
+/// <param name="right"></param>
 void MergeSort(int* array, const int left, const int right)
 {
 	//if array is empty or has 1 element, return
@@ -205,14 +239,14 @@ int main()
 	PrintArray(RandArray);
 
 	////sort our array and then print it again using bubble sort
-	//BubbleSort(RandArray);
-	//cout << endl << "sorted array using BubbleSort (iterative): " << endl << endl;
-	//PrintArray(RandArray);
+	BubbleSort(RandArray);
+	cout << endl << "sorted array using BubbleSort (iterative): " << endl << endl;
+	PrintArray(RandArray);
 
 	////sort our array and then print it again using quick sort
-	//QuickSort(RandArray, 0, GetArraySize(RandArray) - 1);
-	//cout << endl << "sorted array using QuickSort (recursively): " << endl << endl;
-	//PrintArray(RandArray);
+	QuickSort(RandArray, 0, GetArraySize(RandArray) - 1);
+	cout << endl << "sorted array using QuickSort (recursively): " << endl << endl;
+	PrintArray(RandArray);
 
 	//sort our array and then print it again using merge sort
 	MergeSort(RandArray, 0, GetArraySize(RandArray) - 1);
