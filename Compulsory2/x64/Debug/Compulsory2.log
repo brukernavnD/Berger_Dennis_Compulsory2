@@ -1,0 +1,3 @@
+﻿  Compulsory2.cpp
+C:\Users\Dennis\Documents\GitHub\save here\Berger_Dennis_Compulsory2\Compulsory2\Compulsory2.cpp(201,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Compulsory2.vcxproj -> C:\Users\Dennis\Documents\GitHub\save here\Berger_Dennis_Compulsory2\Compulsory2\x64\Debug\Compulsory2.exe
